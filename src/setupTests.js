@@ -1,12 +1,13 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import App from './App';
 
-test('expect 1 to be 1', () => {
-  // render(<App />);
-  // const linkElement = screen.getByText(/learn react/i);
-  // expect(linkElement).toBeInTheDocument();
-  expect(1).toEqual(1);
+it('renders a welcome message when signed out', async () => {
+  const { container } = render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+
+  await screen.findByRole('list', { name: 'book list' });
 });
