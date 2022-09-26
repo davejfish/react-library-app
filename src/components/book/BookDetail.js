@@ -17,7 +17,7 @@ function BookDetail() {
 
   return (
     <div>
-      <h2><Link to='/books'>back</Link></h2>;
+      <h2><Link to='/books'>Back to Catalog</Link></h2>;
       <Book book={book} showDetail />;
     </div>
   );
